@@ -16,7 +16,7 @@
 %{?scl:%scl_package rubygem-%{gem_name}}
 
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4590 for more details
-%define release_prefix 1
+%define release_prefix 2
 
 Summary:        Allows Ruby scripts to interface with a SQLite3 database
 Name:           %{?scl_prefix}rubygem-%{gem_name}
@@ -118,6 +118,9 @@ cp -a %{lib64base}/* %{buildroot}/%{lib64base}
 %doc /%{gemsmri}/faq/
 
 %changelog
+* Thu Oct 20 2022 Dan Muey <dan@cpanel.net> - 1.4.4-2
+- ZC-10347: limit to 1.4 updates since it is nearing EOL and 1.5 has issues
+
 * Thu Jun 16 2022 Cory McIntire <cory@cpanel.net> - 1.4.4-1
 - EA-10771: Update ea-ruby27-rubygem-sqlite3 from v1.4.2 to v1.4.4
 
