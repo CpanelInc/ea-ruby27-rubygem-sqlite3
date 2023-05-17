@@ -1,3 +1,6 @@
+%define debug_package %{nil}
+%define _enable_debug_packages %{nil}
+
 # Defining the package namespace
 %global ns_name ea
 %global ns_dir /opt/cpanel
@@ -16,7 +19,7 @@
 %{?scl:%scl_package rubygem-%{gem_name}}
 
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4590 for more details
-%define release_prefix 5
+%define release_prefix 6
 
 Summary:        Allows Ruby scripts to interface with a SQLite3 database
 Name:           %{?scl_prefix}rubygem-%{gem_name}
@@ -118,6 +121,9 @@ cp -a %{lib64base}/* %{buildroot}/%{lib64base}
 %doc /%{gemsmri}/faq/
 
 %changelog
+* Wed May 17 2023 Julian Brown <julian.brown@cpanel.net> - 1.4.4-6
+- ZC-10950: Fix build problems
+
 * Tue May 09 2023 Brian Mendoza <brian.mendoza@cpanel.net> - 1.4.4-5
 - ZC-10936: Clean up Makefile and remove debug-package-nil
 
