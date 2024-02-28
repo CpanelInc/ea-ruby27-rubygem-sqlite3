@@ -24,7 +24,7 @@ ea4_tool::util::find_latest_version( \&_get_required, \&_add_sum ) if !caller();
 sub _get_required {
     my ($http) = @_;
 
-    my $res = $http->get("https://rubygems.org/gems/sqlite3/versions?page=2");
+    my $res = $http->get("https://rubygems.org/gems/sqlite3/versions?page=3");
     if ( !$res->{success} ) {
         die "Could not GET ruby gem info from https://rubygems.org/gems/sqlite3\n";
     }
